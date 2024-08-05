@@ -10,6 +10,13 @@
 
 <style>
 	main {
-		padding: 1em;
+		margin: 1em;
+	}
+
+	@media (min-width: 600px) {
+		main {
+			width: 600px;
+			margin: 1em auto;
+		}
 	}
 </style>

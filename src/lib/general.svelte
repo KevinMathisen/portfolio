@@ -47,5 +47,8 @@
 		.main {
 			flex-direction: row;
 		}
+		p {
+			margin-right: 0.5em;
+		}
 	}
 </style>
