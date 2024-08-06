@@ -22,7 +22,7 @@
 		transition: background-color 0.3s ease, transform 0.3s ease;
 	}
 
-	.button:hover {
+	.button:hover, .button:focus {
 		background-color: var(--B3COLOR);
 		transform: scale(1.03);
 	}

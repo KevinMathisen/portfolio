@@ -35,7 +35,7 @@
 		background-size: auto 190%;
 	}
 
-	.resumelink:hover {
+	.resumelink:hover, .resumelink:focus {
 		background-position-y: 100%;
 		color: black;
 		transition: all 0.15s ease;
