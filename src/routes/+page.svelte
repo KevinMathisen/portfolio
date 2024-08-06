@@ -3,6 +3,7 @@
 	import General from "$lib/general.svelte";
 	import Boxes from "$lib/boxes.svelte";
 	import Timeline from "$lib/timeline.svelte";
+	import Projects from "$lib/projects.svelte";
 	import '../global.css';
 
 	let languages = ['C', 'C++', 'HTML', 'CSS', 'Javascript', 'Python', 'Golang', 'Kotlin', 'Powershell', 'Bash', 'SQL'];
@@ -26,4 +27,8 @@
 
 <Section title="Timeline">
 	<Timeline />
+</Section>
+
+<Section title="Projects">
+	<Projects />
 </Section>
