@@ -10,11 +10,13 @@
 	 * @type {string[]}
 	 */
 	export let svgPaths = [];
+
+	export let path = "";
 </script>
 
 <div class="grid">
 	{#each titles as title, i}
-		<Imagebox title={title} svgPath={"languages/"+svgPaths[i]} />
+		<Imagebox title={title} svgPath={path+svgPaths[i]} />
 	{/each}
 </div>
 
