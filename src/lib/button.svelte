@@ -6,6 +6,7 @@
 
 <style>
 	.button {
+		width: fit-content;
 		background-color: var(--B2COLOR);
 		color: var(--PCOLOR);
 		padding: 12px 16px;
@@ -18,6 +19,16 @@
 		cursor: pointer;
 		font-size: 0.9em;
 		text-decoration: none;
+		transition: background-color 0.3s ease, transform 0.3s ease;
+	}
+
+	.button:hover {
+		background-color: var(--B3COLOR);
+		transform: scale(1.03);
+	}
+
+	.button:active {
+		transform: scale(0.98);
 	}
 
 	.icon {
