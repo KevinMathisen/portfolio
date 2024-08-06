@@ -17,6 +17,10 @@
 	<General />
 </Section>
 
+<Section title="Projects">
+	<Projects />
+</Section>
+
 <Section title="Programming Languages">
 	<Boxes titles={languages} svgPaths={svgPathsLang} path="languages/" />
 </Section>
@@ -29,6 +33,3 @@
 	<Timeline />
 </Section>
 
-<Section title="Projects">
-	<Projects />
-</Section>
