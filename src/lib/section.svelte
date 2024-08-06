@@ -21,7 +21,7 @@
 
 	.content {
 		padding: 0 0.2em;
-		padding-bottom: 0.5em;
+		padding-bottom: 1em;
 	}
 
 </style>
