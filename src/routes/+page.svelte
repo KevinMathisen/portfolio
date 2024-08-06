@@ -4,6 +4,7 @@
 	import Boxes from "$lib/boxes.svelte";
 	import Timeline from "$lib/timeline.svelte";
 	import Projects from "$lib/projects.svelte";
+	import Button from "$lib/button.svelte";
 	import '../global.css';
 
 	let languages = ['C', 'C++', 'HTML', 'CSS', 'Javascript', 'Python', 'Golang', 'Kotlin', 'Powershell', 'Bash', 'SQL'];
@@ -11,6 +12,13 @@
 
 	let technologies = ['Git', 'Node.js', 'Express', 'Svelte', 'MongoDB', 'MySQL', 'PostgreSQL', 'Docker', 'Haproxy', 'Apache', 'Nginx', 'Cisco IOS'];
 	let svgPathsTech = ['git.svg', 'nodejs.svg', 'express.svg', 'svelte.svg', 'mongodb.svg', 'mysql.svg', 'postgres.svg', 'docker.svg', 'haproxy.svg', 'apache.svg', 'nginx.svg', 'cisco.svg'];
+	
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
 </script>
 
 <Section title="Kevin Nikolai Mathisen">
@@ -33,3 +41,14 @@
 	<Timeline />
 </Section>
 
+<div class="buttonContainer">
+	<Button text="Back to top" iconPath="uparrow.svg" on:click={scrollToTop}/> 
+</div>
+
+<style>
+	.buttonContainer {
+		display: flex;
+		justify-content: center;
+		margin: 2em;
+	}
+</style>
