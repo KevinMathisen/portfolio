@@ -2,6 +2,7 @@
 	import Section from "$lib/section.svelte";
 	import General from "$lib/general.svelte";
 	import Boxes from "$lib/boxes.svelte";
+	import Timeline from "$lib/timeline.svelte";
 	import '../global.css';
 
 	let languages = ['C', 'C++', 'HTML', 'CSS', 'Javascript', 'Python', 'Golang', 'Kotlin', 'Powershell', 'Bash', 'SQL'];
@@ -23,3 +24,6 @@
 	<Boxes titles={technologies} svgPaths={svgPathsTech} path="technologies/"/>
 </Section>
 
+<Section title="Timeline">
+	<Timeline />
+</Section>
