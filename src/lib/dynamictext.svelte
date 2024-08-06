@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { afterUpdate, onMount } from 'svelte';
 	import '../global.css';
 
 	export let text = "";
@@ -9,24 +9,61 @@
 	let currentText = '';
 	let cursorClass = 'blinking-text-cursor';
 
+    let textVisible = false;
+    /**
+     * @type {IntersectionObserver}
+     */
+    let observer;
+    /**
+     * @type {Element}
+     */
+    let element;
+
 	onMount(() => {
-		const typeNextCharacter = () => {
-            if (currentIndex < textArray.length) {
-                currentText += textArray[currentIndex];
-                currentIndex++;
-                let interval = Math.random() * 100 + 50;
-                setTimeout(typeNextCharacter, interval);
-            } else {
-                setTimeout(() => {
-                    cursorClass = 'non-blinking-text-cursor';
-                }, 3000);
-            }
-        };
-        typeNextCharacter();
+        // Create observer to check if the text is visible
+		observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    textVisible = true;
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
 	});
+
+    afterUpdate(() => {
+        // Observe the element if it exists and the observer is created
+        if (observer && element) {
+            observer.observe(element);
+        }
+    });
+
+    // Start typing the text when it is visible
+    $: if (textVisible) {
+        typeNextCharacter();
+    }
+
+    // Function to type the characters one by one
+    const typeNextCharacter = () => {
+        if (currentIndex < textArray.length) {
+            currentText += textArray[currentIndex];
+            currentIndex++;
+            let interval = Math.random() * 90 + 30;
+            setTimeout(typeNextCharacter, interval);
+        } else {
+            setTimeout(() => {
+                cursorClass = 'non-blinking-text-cursor';
+            }, 3000);
+        }
+    };
+
+    // Function to get a reference to the element
+    const getElement = (/** @type {Element} */ el) => {
+        element = el
+    }
 </script>
 
-<h1>{currentText}<span class={cursorClass}>|</span></h1>
+<h1 use:getElement>{currentText}<span class={cursorClass}>|</span></h1>
 
 <style>
     h1 {
