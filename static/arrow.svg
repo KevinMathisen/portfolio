@@ -1,0 +1,8 @@
+<svg viewBox="0 0 24.00 24.00" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#EBE8DD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right" transform="rotate(0)">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+  <g id="SVGRepo_iconCarrier">
+    <line x1="3" y1="21" x2="21" y2="3"></line>
+    <polyline points="3 3 21 3 21 21"></polyline>
+  </g>
+</svg>
