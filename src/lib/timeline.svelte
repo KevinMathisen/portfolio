@@ -22,8 +22,8 @@
 <style>
     .timeline {
       position: relative;
-      margin: 0 auto;
-      padding: 10px 0;
+      margin: 1em auto;
+      padding: 1em 0;
       width: 90%;
     }
   
